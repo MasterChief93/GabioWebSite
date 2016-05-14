@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>{{ page.title }}</h2>
-    {{ page.html|safe }}
+    <main class="demo-main mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active">
+            <section class="section--center mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--12-col">
+
+                    <h2>{{ page.title }}</h2>
+                    {{ page.html|safe }}
+
+                </div>
+            </section>
+        </div>
+    </main>
 {% endblock content %}
