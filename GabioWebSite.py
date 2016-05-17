@@ -26,6 +26,12 @@ def page(path):
     return render_template('page.html', page=page)
 
 
+@app.route('/richiedi-servizio/')
+def richiedi_servizio():
+    page = pages.get_or_404("richiedi-servizio")
+    return render_template("article.html", page=page)
+
+
 @freezer.register_generator
 def page():
     for page in pages._pages:
