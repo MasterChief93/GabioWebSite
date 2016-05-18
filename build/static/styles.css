@@ -260,7 +260,7 @@ html, body {
 
 .demo-content {
   border-radius: 2px;
-  padding: 56px 56px 80px 56px;
+  padding: 28px;
   margin-bottom: 80px;
 }
 
@@ -278,4 +278,9 @@ html, body {
 
 .demo-footer .mdl-mini-footer--link-list a {
   font-size: 13px;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
 }

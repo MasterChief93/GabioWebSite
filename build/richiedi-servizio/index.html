@@ -44,7 +44,7 @@
 		<link rel="stylesheet" href="/static/styles.css">
 	</head>
 	<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header-top">
 			<header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
 				<div class="mdl-layout--large-screen-only mdl-layout__header-row">
 				</div>
@@ -64,15 +64,34 @@
 
                 
     <main class="demo-main mdl-layout__content">
-        <div class="mdl-layout__tab-panel is-active">
-            <section class="section--center mdl-grid mdl-grid--no-spacing">
-                <div class="mdl-cell mdl-cell--12-col">
+        <div class="demo-container mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+            <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
 
-                    <h2>Richiedi servizio</h2>
-                    
+                <h2>Richiedi servizio</h2>
+                <form action="#" method="POST">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="applicant_name">
+    <label class="mdl-textfield__label" for="applicant_name">Nome e cognome richiedente servizio</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="patient_name">
+    <label class="mdl-textfield__label" for="patient_name">Nome e cognome paziente</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="number" pattern="/^([+]39)?((38[{8,9}|0])|(34[{7-9}|0])|(36[6|8|0])|(33[{3-9}|0])|(32[{8,9}]))([\d]{7})$/" id="applicant_phone_number">
+    <label class="mdl-textfield__label" for="applicant_phone_number">Numero di telefono</label>
+    <span class="mdl-textfield__error">Numero non valido</span>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield">
+    <textarea class="mdl-textfield__input" type="text" rows="3" maxrows="6" id="additional_info"></textarea>
+  <label class="mdl-textfield__label" for="schools">Informazioni aggiuntive</label>
+</div>
+</form>
 
-                </div>
-            </section>
+</form>
+
+            </div>
         </div>
     </main>
 
