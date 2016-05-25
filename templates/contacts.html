@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+            <div class="demo-content mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+            <div class="demo-content mdl-cell mdl-cell--8-col">
+                <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col" style="padding-top: 5px">
+
+                    <h3>Contattaci</h3>
+
+                    <strong>Telefono</strong>: 06 87671735<br><br>
+
+                    <strong>Dove puoi trovarci</strong>:<br>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d371.55258448592184!2d12.829079603021205!3d41.84077131757155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f806d4e69148f%3A0x41f50273861d99e4!2sVia+Giuseppe+Calandrelli%2C+47%2C+00039+Zagarolo+RM%2C+Italia!5e0!3m2!1sit!2sus!4v1463476590800"
+                            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col" style="margin-top: 40px">
+                        <strong>Oppure puoi scriverci</strong>:<br>
+                        <form action="#" method="POST" class="mdl-cell mdl-cell--12-col">
+
+
+                            <div class="input-field mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <i class="material-icons prefix">account_box</i>
+                                <input class="validate" type="text" id="applicant_name">
+                                <label for="applicant_name">Nome e cognome</label>
+                            </div>
+
+                            <div class="input-field mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <i class="material-icons prefix">message</i>
+                                <label class="validate" for="message">Informazioni</label>
+                                <textarea class="mdl-textfield__input" rows="3" id="message" style="max-height: 200px"></textarea>
+                            </div>
+                            <div class="mdl-cell--8-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <button id="send-show-snackbar" class="mdl-button mdl-js-button mdl-button--raised"
+                                        type="button">
+                                    Invia messaggio
+                                </button>
+                            </div>
+                            <div id="send-snackbar" class="mdl-js-snackbar mdl-snackbar">
+                                <div class="mdl-snackbar__text"></div>
+                                <button class="mdl-snackbar__action" type="button"></button>
+                            </div>
+                            <script>
+                                (function () {
+                                    'use strict';
+                                    var snackbarContainer = document.querySelector('#send-snackbar');
+                                    var showSnackbarButton = document.querySelector('#send-show-snackbar');
+                                    var handler = function (event) {
+                                        showSnackbarButton.style.backgroundColor = '';
+                                    };
+                                    showSnackbarButton.addEventListener('click', function () {
+                                        'use strict';
+                                        showSnackbarButton.style.backgroundColor = '#' +
+                                                Math.floor(Math.random() * 0xFFFFFF).toString(16);
+                                        var data = {
+                                            message: 'Messaggio Inviato',
+                                            timeout: 2000,
+                                            actionHandler: handler,
+                                        };
+                                        snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                                    });
+                                }());
+                            </script>
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

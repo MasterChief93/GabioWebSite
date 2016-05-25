@@ -23,13 +23,16 @@ def index():
 @app.route('/<path:path>/')
 def page(path):
     page = pages.get_or_404(path)
-    return render_template('page.html', page=page)
+    return render_template('article.html', page=page)
 
 
 @app.route('/richiedi-servizio/')
 def richiedi_servizio():
-    page = pages.get_or_404("richiedi-servizio")
-    return render_template("article.html", page=page)
+    return render_template("service.html")
+
+@app.route('/contattaci/')
+def contattaci():
+    return render_template("contacts.html")
 
 
 @freezer.register_generator
