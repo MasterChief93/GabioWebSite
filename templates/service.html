@@ -3,139 +3,172 @@
 {% block content %}
     <main class="demo-main mdl-layout__content">
         <div class="demo-container mdl-grid">
-            <div class="demo-content mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-            <div class="demo-content mdl-cell mdl-cell--8-col">
-                <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 col s12">
+            <div class="demo-content mdl-cell mdl-cell--2-col mdl-cell--12-col-phone"></div>
+            <div class="demo-content mdl-cell mdl-cell--8-col mdl-cell--12-col-phone">
+                <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell--12-col mdl-cell--12-col-phone">
                     <h4>Richiedi Servizio</h4>
 
                     <form action="http://www.crocerossagabio.it/Public/sendPDF.php" method="POST" class="col s12">
-
-                        <h5>Dati Richiedente</h5>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">account_box</i>
-                                <input class="validate" type="text" id="applicant_name" name="applicant_name">
-                                <label for="applicant_name">Nome e cognome del richiedente</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">local_phone</i>
-                                <input class="validate" type="text" id="applicant_phone_number" name="applicant_phone_number">
-                                <label for="applicant_phone_number">Numero di
-                                    telefono fisso</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <i class="material-icons prefix">stay_current_portrait</i>
-                                <input class="validate" type="text" pattern="/^([+]39)?((38[{8,9}|0])|(34[{7-9}|0])|(36[6|8|0])|(33[{3-9}|0])|(32[{8,9}]))([\d]{7})$/" id="applicant_mobile_phone_number" name="applicant_mobile_phone_number">
-                                <label for="applicant_mobile_phone_number">Numero di
-                                    telefono cellulare</label>
-                            </div>
-                        </div>
-
-                        <h5>Dati Paziente</h5>
-
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <i class="material-icons prefix">assignment_ind</i>
-                                <input class="validate" type="text" id="patient_name" name="patient_name">
-                                <label for="patient_name">Nome e cognome del paziente</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s4">
-                                <i class="material-icons prefix">home</i>
-                                <input class="validate" type="text" id="patient_address" name="patient_address">
-                                <label for="patient_address">Indirizzo dell'abitazione</label>
-                            </div>
-                            <div class="input-field col s4">
-                                <input class="validate" type="number" id="patient_address_city" name="patient_address_city">
-                                <label for="patient_address_city">Città</label>
-                            </div>
-                            <div class="input-field col s2">
-                                <input class="validate" type="number" id="patient_address_stairs_num" name="patient_address_stairs_num">
-                                <label for="patient_address_stairs_num">Piani di scale</label>
-                            </div>
-                            <div class="input-field col s1">
-                                <input type="checkbox" id="lift-check" name="lift-check" value="lift">
-                                <label for="lift-check">Ascensore</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s2">
-                                <i class="material-icons prefix">accessibility</i>
-                                <input class="validate" type="number" id="patient_age" name="patient_age" value="age">
-                                <label for="patient_age">Età</label>
-                            </div>
-                            <div class="input-field col s2">
-                                <input class="validate" type="number" id="patient_weight" name="patient_weight" value="weight">
-                                <label for="patient_weight">Peso in Kg</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s3">
-                                <i class="material-icons prefix">check_circle</i>
-                                <input type="checkbox" id="oxygen_check" name="oxygen_check" value="oxygen">
-                                <label for="oxygen-check">Ossigeno</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input type="checkbox" id="wander_check" name="wander_check" value="wander">
-                                <label for="wander-check">Deambula</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input type="checkbox" id="sit_check" name="sit_check" value="sit">
-                                <label for="sit-check">Posizione seduta</label>
-                            </div>
-                            <div class="input-field col s3">
-                                <input type="checkbox" id="supine_check" name="supine_check" value="supine">
-                                <label for="supine-check">Posizione supina</label>
-                            </div>
-                        </div>
-                        <div class="row" style="padding-top: 15px">
-                          <h5>Servizio</h5>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <select id="service_type" name="service_type">
-                                    <option value selected disabled>Scegli un tipo di servizio</option>
-                                    <option value="discharge">Dimissioni</option>
-                                    <option value="examination">Visita di controllo</option>
-                                    <option value="admission">Ricovero in casa di cura o clinica</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s12">
-                                <label for="service_date">Data servizio</label>
-                                <input type="date" id="service_date" class="datepicker" name="service_date">
-                            </div>
-                        </div>
-                        <div class="col s12" id="service_info">
+                        <div class="section">
+                            <h5>Dati Richiedente</h5>
                             <div class="row">
-                                <div class="input-field col s4">
-                                    <input class="mdl-textfield__input" type="text" id="place_from" name="place_from">
-                                    <label for="place_from">Indirizzo del luogo di partenza</label>
+                                <div class="input-field col s12 l12">
+                                    <i class="material-icons prefix">account_box</i>
+                                    <input class="validate" type="text" id="applicant_name" name="applicant_name">
+                                    <label for="applicant_name">Nome e cognome del richiedente</label>
                                 </div>
-                                <div class="input-field col s4">
-                                    <input class="validate" type="text" id="place_to" name="place_to">
-                                    <label for="place_to">Indirizzo del luogo di arrivo</label>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12 l6">
+                                    <i class="material-icons prefix">local_phone</i>
+                                    <input class="validate" type="text" id="applicant_phone_number"
+                                           name="applicant_phone_number">
+                                    <label for="applicant_phone_number">Numero di telefono fisso</label>
                                 </div>
-                                <div class="input-field col s4">
-                                    <input class="validate" type="text" id="section" name="section">
-                                    <label for="section">Reparto</label>
+                                <div class="input-field col s12 l6">
+                                    <i class="material-icons prefix">stay_current_portrait</i>
+                                    <input class="validate" type="text"
+                                           pattern="/^([+]39)?((38[{8,9}|0])|(34[{7-9}|0])|(36[6|8|0])|(33[{3-9}|0])|(32[{8,9}]))([\d]{7})$/"
+                                           id="applicant_mobile_phone_number" name="applicant_mobile_phone_number">
+                                    <label for="applicant_mobile_phone_number">Numero di telefono cellulare</label>
                                 </div>
                             </div>
                         </div>
+                        <div class="divider"></div>
+                        <div class="section">
+                            <h5>Dati Paziente</h5>
 
-                        <h5>Informazioni aggiuntive</h5>
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">mode_edit</i>
-                            <textarea id="additional_info" class="materialize-textarea" name="additional_info"></textarea>
-                            <label for="additional_info">Informazioni Aggiuntive</label>
+                            <div class="row">
+                                <div class="input-field col s12 l12">
+                                    <i class="material-icons prefix">assignment_ind</i>
+                                    <input class="validate" type="text" id="patient_name" name="patient_name">
+                                    <label for="patient_name">Nome e cognome del paziente</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6 l4">
+                                    <i class="material-icons prefix">home</i>
+                                    <input class="validate" type="text" id="patient_address" name="patient_address">
+                                    <label for="patient_address">Indirizzo dell'abitazione</label>
+                                </div>
+                                <div class="input-field col s6 l4">
+                                    <input class="validate" type="text" id="patient_address_city"
+                                           name="patient_address_city">
+                                    <label for="patient_address_city">Città</label>
+                                </div>
+                                <div class="input-field col s10 l2">
+                                    <input class="validate" type="number" id="patient_address_stairs_num"
+                                           name="patient_address_stairs_num">
+                                    <label for="patient_address_stairs_num">Piani di scale</label>
+                                </div>
+                                <div class="input-field col s2 l1">
+                                    <input type="checkbox" id="lift-check" name="lift-check" value="lift" class="validate">
+                                    <label for="lift-check">Ascensore</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s2 l2">
+                                    <i class="material-icons prefix">accessibility</i>
+                                    <input class="validate" type="number" id="patient_age" name="patient_age" value="age">
+                                    <label for="patient_age">Età</label>
+                                </div>
+                                <div class="input-field col s2 l2">
+                                    <input class="validate" type="number" id="patient_weight" name="patient_weight"
+                                           value="weight">
+                                    <label for="patient_weight">Peso in Kg</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6 l3">
+                                    <i class="material-icons prefix">check_circle</i>
+                                    <input type="checkbox" id="oxygen_check" name="oxygen_check" value="oxygen"
+                                           class="validate">
+                                    <label for="oxygen-check">Ossigeno</label>
+                                </div>
+                                <div class="input-field col s6 l3">
+                                    <input type="checkbox" id="wander_check" name="wander_check" value="wander"
+                                           class="validate">
+                                    <label for="wander-check">Deambula</label>
+                                </div>
+                                <div class="input-field col s6 l2">
+                                    <input type="checkbox" id="sit_check" name="sit_check" value="sit" class="validate">
+                                    <label for="sit-check">Posizione seduta</label>
+                                </div>
+                                <div class="input-field col s6 l2">
+                                    <input type="checkbox" id="supine_check" name="supine_check" value="supine"
+                                           class="validate">
+                                    <label for="supine-check">Posizione supina</label>
+                                </div>
+                            </div>
                         </div>
+                        <div class="divider"></div>
+                        <div class="section">
+                        <div class="row" style="padding-top: 15px">
+                            <h5>Servizio</h5>
+                        </div>
+                            <div class="row">
+                                <div class="col s6">
+                                    <label for="service_date">Data del servizio richiesto</label>
+                                    <input type="date" id="service_date" class="datepicker" name="service_date">
+                                </div>
+                                <div class="col s6">
+                                    <label for="service_date">Orario del servizio richiesto</label>
+                                    <input type="date" id="service_hour" class="timepicker" name="service_hour">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select id="service_type" name="service_type">
+                                        <option value selected disabled>Scegli un tipo di servizio</option>
+                                        <option value="discharge">Dimissioni</option>
+                                        <option value="transfer">Trasfermimento struttura</option>
+                                        <option value="examination">Visita di controllo</option>
+                                        <option value="admission">Ricovero in casa di cura o clinica</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="section col s12" id="service_info" style="display: none;">
+                                <div class="row">
+                                    <div class="input-field col s6" id="address_from">
+                                        <i class="material-icons prefix" id="hospital-icon-from" style="display: none;">local_hospital</i>
+                                        <i class="material-icons prefix" id="home-icon-from" style="display: none;">home</i>
+                                        <input class="validate" type="text" id="place_from" name="place_from">
+                                        <label for="place_from">Indirizzo del luogo di partenza</label>
+                                    </div>
+                                    <div class="input-field col s6" id="section_from">
+                                        <input class="validate" type="text" id="section" name="section">
+                                        <label for="section">Reparto</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6" id="address_to">
+                                        <i class="material-icons prefix" id="hospital-icon-to" style="display: none;">local_hospital</i>
+                                        <i class="material-icons prefix" id="home-icon-to" style="display: none;">home</i>
+                                        <input class="validate" type="text" id="place_to" name="place_to">
+                                        <label for="place_to">Indirizzo del luogo di arrivo</label>
+                                    </div>
+                                    <div class="input-field col s6" id="section_to">
+                                        <input class="validate" type="text" id="section" name="section">
+                                        <label for="section">Reparto</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="section">
+                            <h5>Informazioni aggiuntive</h5>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <textarea id="additional_info" class="materialize-textarea"
+                                          name="additional_info"></textarea>
+                                <label for="additional_info">Informazioni Aggiuntive</label>
+                            </div>
 
-                        <div class="col s8">
-                            <button type="submit" name="action" class="waves-effect waves-light btn" onclick="Materialize.toast('I am a toast!', 2000)">Invia Richiesta</button>
+                            <div class="col s8">
+                                <button type="submit" name="action" class="waves-effect waves-light btn"
+                                        onclick="Materialize.toast('I am a toast!', 2000)">Invia Richiesta
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -16,127 +16,174 @@
 	limitations under the License
 	-->
 <html lang="it">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-		<title>Croce Rossa Italiana - Comitato locale Gabio</title>
-		<!-- Add to homescreen for Chrome on Android -->
-		<meta name="mobile-web-app-capable" content="yes">
-		<link rel="icon" sizes="192x192" href="{{ url_for('static', filename='images/android-desktop.png') }}">
-		<!-- Add to homescreen for Safari on iOS -->
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="apple-mobile-web-app-title" content="Material Design Lite">
-		<link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='images/ios-desktop.png') }}">
-		<!-- Tile icon for Win8 (144x144 + tile color) -->
-		<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-		<meta name="msapplication-TileColor" content="#3372DF">
-		<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
-		<!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-		<!--
-			<link rel="canonical" href="http://www.example.com/">
-			-->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.red-amber.min.css" />
-		<link rel="stylesheet" href="{{ url_for('static', filename='materialize/css/materialize.min.css') }}">
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="{{ url_for('static', filename='materialize/js/materialize.min.js') }}"></script>
-        <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-        <script>
-            $(document).ready(function() {
-                $('select').material_select();
-                  $('.datepicker').pickadate({
-                      monthsFull: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
-                      weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
-                      today: 'oggi',
-                      clear: 'reset',
-                      formatSubmit: 'dd/mm/yyyy',
-                      close: 'chiudi',
-                      min: true,
-                  });
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Croce Rossa Italiana - Comitato locale Gabio</title>
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='images/android-desktop.png') }}">
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='images/ios-desktop.png') }}">
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+        <link rel="canonical" href="http://www.example.com/">
+        -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.red-amber.min.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='materialize/css/materialize.min.css') }}">
+    <script src="{{ url_for('static', filename='materialize/js/materialize.min.js') }}"></script>
+    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='materialize-timepicker/css/materialize.clockpicker.css') }}">
+    <script src="{{ url_for('static', filename='materialize-timepicker/js/materialize.clockpicker.js') }}"></script>
+
+
+    <script>
+        $(function () {
+            $('select').material_select();
+            $('.datepicker').pickadate({
+                monthsFull: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+                weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
+                monthsShort: ['GEN', 'FEB', 'MAR', 'APR', 'MAG', 'GIU', 'LUG', 'AGO', 'SET', 'OTT', 'NOV', 'DIC'],
+                weekdaysFull: ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'],
+                weekdaysLetter: ['D', 'L', 'Ma', 'Me', 'G', 'V', 'S'],
+                today: 'oggi',
+                clear: 'reset',
+                formatSubmit: 'dd/MM/yyyy',
+                close: 'chiudi',
+                min: true,
+{#                closeOnSelect: true,#}
+{#                closeOnClear: true#}
             });
-        </script>
-	</head>
-	<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header-top">
-			<header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
-				<div class="mdl-layout--large-screen-only mdl-layout__header-row">
-				</div>
-				<div class="mdl-layout--large-screen-only mdl-layout__header-row">
-					<h3>Croce Rossa Italiana - Comitato locale Gabio</h3>
-				</div>
-				<div class="mdl-layout--large-screen-only mdl-layout__header-row">
-				</div>
-				<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-					<a href="/" class="mdl-layout__tab {% if request.path == "/" %} is-active{% endif %}" id="home">Home</a>
-					<a href="/chi-siamo" class="mdl-layout__tab {% if request.path == "/chi-siamo/" %} is-active{% endif %}" id="chi-siamo">Chi siamo</a>
-					<a href="/sostienici" class="mdl-layout__tab {% if request.path == "/sostienici/" %} is-active{% endif %}" id="sostienici">Sostienici</a>
-					<a href="/richiedi-servizio" class="mdl-layout__tab {% if request.path == "/richiedi-servizio/" %} is-active{% endif %}" id="richiedi-servizio">Richiedi servizio</a>
-					<a href="/contattaci" class="mdl-layout__tab {% if request.path == "/contattaci/" %} is-active{% endif %}" id="contattaci">Contattaci</a>
-				</div>
-			</header>
+            $('.timepicker').pickatime({
+                twelvehour: false,
+                donetext: 'Fatto',
+{#                autoclose: true#}
+            });
+            $('#service_type').change(function () {
+                $('#service_info').show('slide');
+                if ($(this).val() == "discharge") {
+                    $('#home-icon-from').hide();
+                    $('#hospital-icon-from').show();
+                    $('#home-icon-to').show();
+                    $('#hospital-icon-to').hide();
+                    $('#section_to').hide();
+                    $('#section_from').show();
+                }
+                else if ($(this).val() == "admission") {
+                    $('#home-icon-from').show();
+                    $('#hospital-icon-from').hide();
+                    $('#home-icon-to').hide();
+                    $('#hospital-icon-to').show();
+                    $('#section_to').show();
+                    $('#section_from').hide();
+                }
+                else {
+                    $('#home-icon-from').hide();
+                    $('#hospital-icon-from').show();
+                    $('#home-icon-to').hide();
+                    $('#hospital-icon-to').show();
+                    $('#section_to').show();
+                    $('#section_from').show();
+                }
+            });
+        });
+    </script>
+</head>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header-top">
+    <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+            <h3>Croce Rossa Italiana - Comitato locale Gabio</h3>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+            <a href="/" class="mdl-layout__tab {% if request.path == "/" %} is-active{% endif %}" id="home">Home</a>
+            <a href="/chi-siamo" class="mdl-layout__tab {% if request.path == "/chi-siamo/" %} is-active{% endif %}"
+               id="chi-siamo">Chi siamo</a>
+            <a href="/sostienici" class="mdl-layout__tab {% if request.path == "/sostienici/" %} is-active{% endif %}"
+               id="sostienici">Sostienici</a>
+            <a href="/richiedi-servizio"
+               class="mdl-layout__tab {% if request.path == "/richiedi-servizio/" %} is-active{% endif %}"
+               id="richiedi-servizio">Richiedi servizio</a>
+            <a href="/contattaci" class="mdl-layout__tab {% if request.path == "/contattaci/" %} is-active{% endif %}"
+               id="contattaci">Contattaci</a>
+        </div>
+    </header>
 
-            {% block content %}
-                <p>Default content to be displayed</p>
-            {% endblock content %}
+    {% block content %}
+        <p>Default content to be displayed</p>
+    {% endblock content %}
 
-            <footer class="mdl-mega-footer">
-				<div class="mdl-mega-footer--middle-section">
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">Features</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">About</a></li>
-							<li><a href="#">Terms</a></li>
-							<li><a href="#">Partners</a></li>
-							<li><a href="#">Updates</a></li>
-						</ul>
-					</div>
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">Details</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">Spec</a></li>
-							<li><a href="#">Tools</a></li>
-							<li><a href="#">Resources</a></li>
-						</ul>
-					</div>
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">Technology</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">How it works</a></li>
-							<li><a href="#">Patterns</a></li>
-							<li><a href="#">Usage</a></li>
-							<li><a href="#">Products</a></li>
-							<li><a href="#">Contracts</a></li>
-						</ul>
-					</div>
-					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-						<h1 class="mdl-mega-footer--heading">FAQ</h1>
-						<ul class="mdl-mega-footer--link-list">
-							<li><a href="#">Questions</a></li>
-							<li><a href="#">Answers</a></li>
-							<li><a href="#">Contact us</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="mdl-mega-footer--bottom-section">
-					<div class="mdl-logo">
-						More Information
-					</div>
-					<ul class="mdl-mega-footer--link-list">
-						<li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">Privacy and Terms</a></li>
-					</ul>
-				</div>
-			</footer>
-		</div>
-	</body>
+    <footer class="mdl-mega-footer">
+        <div class="mdl-mega-footer--middle-section">
+            <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">Features</h1>
+                <ul class="mdl-mega-footer--link-list">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Updates</a></li>
+                </ul>
+            </div>
+            <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">Details</h1>
+                <ul class="mdl-mega-footer--link-list">
+                    <li><a href="#">Spec</a></li>
+                    <li><a href="#">Tools</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
+            </div>
+            <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">Technology</h1>
+                <ul class="mdl-mega-footer--link-list">
+                    <li><a href="#">How it works</a></li>
+                    <li><a href="#">Patterns</a></li>
+                    <li><a href="#">Usage</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Contracts</a></li>
+                </ul>
+            </div>
+            <div class="mdl-mega-footer--drop-down-section">
+                <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                <h1 class="mdl-mega-footer--heading">FAQ</h1>
+                <ul class="mdl-mega-footer--link-list">
+                    <li><a href="#">Questions</a></li>
+                    <li><a href="#">Answers</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mdl-mega-footer--bottom-section">
+            <div class="mdl-logo">
+                More Information
+            </div>
+            <ul class="mdl-mega-footer--link-list">
+                <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Privacy and Terms</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+</body>
 </html>
