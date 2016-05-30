@@ -19,7 +19,9 @@ html, body {
     margin: 0;
     padding: 0;
 }
+/*-------------------------------------------------/SEZIONE CUSTOM\---------------------------------------------------*/
 
+/*Per rimuovere le freccette negli input di type number*/
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -28,63 +30,74 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
+/*per abbassare le icone*/
 .prefix {
     padding-top: 16px;
 }
 
+/*Colore della parte centrale del datepicker*/
 .picker__date-display {
     background-color: #F44336 !important;
 }
 
+/*Colore della barra più in alto del datepicker*/
 .picker__weekday-display {
     background-color: #D32F2F !important;
 }
 
-option {
-    color: #F44336;
-}
-
-/* label focus color */
+/*Per cambiare il colore della label degli input*/
 .input-field input[type=number]:focus + label,
 .input-field input[type=text]:focus + label {
     color: #F44336;
 }
-
+/*Per cambiare il colore del pallino che compare intorno al giorno selezionato nel datepicker*/
 .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
     background-color: #F44336;
 }
 
+/*Per cambiare il colore del numero corrispondente al giorno corrente nel datepicker*/
 .picker__day.picker__day--today {
     color: #F44336;
 }
 
+/*Per cambiare il colore del timepicker*/
 .clockpicker-display {
     color: #D32F2F !important;
 }
 
+/*Per cambiare il colore delle icone che fanno da prefisso quando l'input viene selezionato*/
 .input-field .prefix.active  {
     color: #F44336;
 }
 
-/* label underline focus color */
+/*Per cambiare il colore della linea al di sotto degli input */
 .input-field input[type=number]:focus,
 .input-field input[type=text]:focus {
     border-bottom: 1px solid #F44336;
     box-shadow: 0 1px 0 0 #F44336;
 }
 
+/*Per cambiare il colore di sfondo delle frecce di navigazione per cambiare mese nel datepicker*/
 .picker__nav--prev:hover, .picker__nav--next:hover {
     background: rgba(244,67,54,0.30);
 }
-
+/*Per nascondere il footer nel datepicker*/
 .picker__footer {
     display: none;
 }
 
+/*Per cambiare colore alla linea sottostante la textarea*/
+textarea.materialize-textarea:focus:not([readonly]){
+    border-bottom: 1px solid #F44336;
+    box-shadow: 0 1px 0 0 #F44336;
+}
+
+/*Per cambiare colore alla linea sottostante la textarea*/
 textarea.materialize-textarea:focus:not([readonly])+label {
     color: #F44336;
 }
 
+/*Per cambiare colore alle option dentro una select*/
 .dropdown-content li>a, .dropdown-content li>span {
     color: black;
 }
@@ -92,12 +105,13 @@ textarea.materialize-textarea:focus:not([readonly])+label {
 .btn {
     background-color: #F44336;
 }
-
+/*Per cambiare colore alla spunta delle checkbox*/
 [type="checkbox"]:checked+label:before {
     border-right: 2px solid #4CAF50;
     border-bottom: 2px solid #4CAF50;
 }
 
+/*Per cambiare colore alla linea sottostante gli input nel caso in cui sia errato il tipo di dato inserito*/
 input:not([type]).invalid, input:not([type]):focus.invalid, input[type=text].invalid, input[type=text]:focus.invalid, input[type=password].invalid, input[type=password]:focus.invalid, input[type=email].invalid, input[type=email]:focus.invalid, input[type=url].invalid, input[type=url]:focus.invalid, input[type=time].invalid, input[type=time]:focus.invalid, input[type=date].invalid, input[type=date]:focus.invalid, input[type=datetime].invalid, input[type=datetime]:focus.invalid, input[type=datetime-local].invalid, input[type=datetime-local]:focus.invalid, input[type=tel].invalid, input[type=tel]:focus.invalid, input[type=number].invalid, input[type=number]:focus.invalid, input[type=search].invalid, input[type=search]:focus.invalid, textarea.materialize-textarea.invalid, textarea.materialize-textarea:focus.invalid{
     border-bottom: 1px solid #D32F2F;
     box-shadow: 0 1px 0 0 #D32F2F;
@@ -107,6 +121,9 @@ img {
     height: auto;
     max-width: 100%;
 }
+
+/*-------------------------------------------------\SEZIONE CUSTOM/---------------------------------------------------*/
+
 
 /* MDL - template */
 .mdl-demo .mdl-layout__header-row {

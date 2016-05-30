@@ -47,7 +47,8 @@
     <script src="{{ url_for('static', filename='materialize/js/materialize.min.js') }}"></script>
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='materialize-timepicker/css/materialize.clockpicker.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='materialize-timepicker/css/materialize.clockpicker.css') }}">
     <script src="{{ url_for('static', filename='materialize-timepicker/js/materialize.clockpicker.js') }}"></script>
 
 
@@ -71,7 +72,7 @@
                 min: true,
                 closeOnSelect: true,
                 closeOnClear: true,
-                onSet: function(arg) {
+                onSet: function (arg) {
                     if ('select' in arg) { //prevent closing on selecting month/year
                         this.close();
                     }
@@ -113,7 +114,7 @@
     </script>
 </head>
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header-top">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
@@ -126,12 +127,14 @@
             <a href="/" class="mdl-layout__tab {% if request.path == "/" %} is-active{% endif %}" id="home">Home</a>
             <a href="/chi-siamo" class="mdl-layout__tab {% if request.path == "/chi-siamo/" %} is-active{% endif %}"
                id="chi-siamo">Chi siamo</a>
-            <a href="/sostienici" class="mdl-layout__tab {% if request.path == "/sostienici/" %} is-active{% endif %}"
+            <a href="/sostienici"
+               class="mdl-layout__tab {% if request.path == "/sostienici/" %} is-active{% endif %}"
                id="sostienici">Sostienici</a>
             <a href="/richiedi-servizio"
                class="mdl-layout__tab {% if request.path == "/richiedi-servizio/" %} is-active{% endif %}"
                id="richiedi-servizio">Richiedi servizio</a>
-            <a href="/contattaci" class="mdl-layout__tab {% if request.path == "/contattaci/" %} is-active{% endif %}"
+            <a href="/contattaci"
+               class="mdl-layout__tab {% if request.path == "/contattaci/" %} is-active{% endif %}"
                id="contattaci">Contattaci</a>
         </div>
     </header>
