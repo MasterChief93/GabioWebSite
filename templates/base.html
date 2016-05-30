@@ -54,24 +54,33 @@
     <script>
         $(function () {
             $('select').material_select();
-            $('.datepicker').pickadate({
+            $('#service_date').pickadate({
                 monthsFull: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
                 weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
                 monthsShort: ['GEN', 'FEB', 'MAR', 'APR', 'MAG', 'GIU', 'LUG', 'AGO', 'SET', 'OTT', 'NOV', 'DIC'],
                 weekdaysFull: ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'],
-                weekdaysLetter: ['D', 'L', 'Ma', 'Me', 'G', 'V', 'S'],
-                today: 'oggi',
-                clear: 'reset',
+                labelMonthNext: 'Mese successivo',
+                labelMonthPrev: 'Mese precedente',
+                labelMonthSelect: 'Seleziona un mese',
+                labelYearSelect: 'Seleziona un anno',
+                weekdaysLetter: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
                 formatSubmit: 'dd/MM/yyyy',
-                close: 'chiudi',
+                clear: '',
+                today: '',
+                close: '',
                 min: true,
-{#                closeOnSelect: true,#}
-{#                closeOnClear: true#}
+                closeOnSelect: true,
+                closeOnClear: true,
+                onSet: function(arg) {
+                    if ('select' in arg) { //prevent closing on selecting month/year
+                        this.close();
+                    }
+                }
             });
-            $('.timepicker').pickatime({
+            $('#service_hour').pickatime({
                 twelvehour: false,
-                donetext: 'Fatto',
-{#                autoclose: true#}
+                donetext: '',
+                autoclose: true
             });
             $('#service_type').change(function () {
                 $('#service_info').show('slide');

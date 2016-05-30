@@ -30,6 +30,7 @@ def page(path):
 def richiedi_servizio():
     return render_template("service.html")
 
+
 @app.route('/contattaci/')
 def contattaci():
     return render_template("contacts.html")
@@ -39,6 +40,7 @@ def contattaci():
 def page():
     for page in pages._pages:
         yield {'path': page}
+
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "build":
