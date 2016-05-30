@@ -30,6 +30,11 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
+/*Per correggere la presenza di un bordo maggiore sul lato sinistro rispetto al destro*/
+*, *:before, *:after {
+    box-sizing: initial;
+}
+
 /*per abbassare le icone*/
 .prefix {
     padding-top: 16px;
