@@ -77,7 +77,6 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s6 m6 l3">
-                                <i class="material-icons prefix">check_circle</i>
                                 <input type="checkbox" id="oxygen_check" name="oxygen_check" value="oxygen"
                                        class="validate">
                                 <label for="oxygen_check">Ossigeno</label>
@@ -153,17 +152,21 @@
                     </div>
                     <div class="divider"></div>
                     <div class="section">
-                        <h5>Informazioni aggiuntive</h5>
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">mode_edit</i>
-                     <textarea id="additional_info" class="materialize-textarea"
-                               name="additional_info" length="150"></textarea>
-                            <label for="additional_info">Informazioni Aggiuntive</label>
+                        <div class="row">
+                            <h5>Informazioni aggiuntive</h5>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="additional_info" class="materialize-textarea"
+                                      name="additional_info" length="150"></textarea>
+                                <label for="additional_info">Informazioni Aggiuntive</label>
+                            </div>
                         </div>
-                        <div class="col s8 right-align">
-                            <button type="submit" name="action" class="waves-effect waves-light btn"
-                                    onclick="Materialize.toast('I am a toast!', 2000)">Invia Richiesta
-                            </button>
+                        <div class="row" style="padding-top: 20px">
+                            <div class="col s12 right-align">
+                                <button type="submit" name="action" class="waves-effect waves-light btn"
+                                        onclick="Materialize.toast('I am a toast!', 2000)">Invia Richiesta
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </form>
