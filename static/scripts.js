@@ -105,4 +105,16 @@ $(function () {
                 $.post("http://www.crocerossagabio.it/Public/sendPDF.php", $("#service_form").serialize());
                 return false;
             });
+    
+
+            $('#patient_address').focusout(function () {
+                $('#patient_address').addClass('showplaceholder');
+            });
+            $('#place_from').focusout(function () {
+                $('#place_from').addClass('showplaceholder');
+            });
+            $('#place_to').focusout(function () {
+                $('#place_to').addClass('showplaceholder');
+            });
+
         });
