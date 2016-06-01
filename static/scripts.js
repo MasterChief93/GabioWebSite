@@ -75,28 +75,34 @@ $(function () {
             var search3 = new google.maps.places.Autocomplete(place_to, options);
 
             $('#same_address_to_check').change(function () {
-                if (!$('#place_to').prop("disabled")) {
+                var place_to = $('#place_to');
+                if (!place_to.prop("disabled")) {
                     var address = $('#patient_address').val();
-                    $('#place_to').val(address);
-                    $('#place_to').prop('disabled', true);
+                    place_to.val(address);
+                    place_to.prop('disabled', true);
                     $('#place_to_label').addClass('active');
                 } else {
-                    $('#place_to').prop('disabled', false);
-                    $('#place_to').val('');
-                    // $('#place_to_label').removeClass('active');
+                    place_to.prop('disabled', false);
+                    place_to.val('');
+                    $('#place_to_label').removeClass('active');
                 }
             });
             $('#same_address_from_check').change(function () {
-                if (!$('#place_from').prop("disabled")) {
+                var place_from = $('#place_from');
+                if (!place_from.prop("disabled")) {
                     var address = $('#patient_address').val();
-                    $('#place_from').val(address);
-                    $('#place_from').prop('disabled', true);
+                    place_from.val(address);
+                    place_from.prop('disabled', true);
                     $('#place_from_label').addClass('active');
                 } else {
-                    $('#place_from').prop('disabled',false);
-                    $('#place_from').val('');
-                    // $('#place_from_label').removeClass('active');
+                    place_from.prop('disabled',false);
+                    place_from.val('');
+                    $('#place_from_label').removeClass('active');
 
                 }
+            });
+            $('#service_form').submit(function () {
+                $.post("http://www.crocerossagabio.it/Public/sendPDF.php", $("#service_form").serialize());
+                return false;
             });
         });

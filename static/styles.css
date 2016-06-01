@@ -50,8 +50,13 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #D32F2F !important;
 }
 
+::-webkit-input-placeholder {
+    opacity: 0.0;
+}
+
 /*Per cambiare il colore della label degli input*/
 .input-field input[type=number]:focus + label,
+.input-field input[type=email]:focus + label,
 .input-field input[type=text]:focus + label {
     color: #F44336;
 }
@@ -107,15 +112,12 @@ input[type=number]::-webkit-outer-spin-button {
     stroke-linecap: round
 }
 
-.btn-floating.btn-flat.active {
-    background-color: rgba(244, 67, 54, 0.25) !important;
-}
-
 .btn-floating.btn-flat:active {
     background-color: rgba(244, 67, 54, 0.5) !important;
 }
 
-.picker__footer .clockpicker-button:active {
+.picker__footer .clockpicker-button:active,
+.btn-floating.btn-flat.active {
     background-color: rgba(244, 67, 54, 0.25) !important;
 }
 
@@ -126,6 +128,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*Per cambiare il colore della linea al di sotto degli input */
 .input-field input[type=number]:focus,
+.input-field input[type=email]:focus,
 .input-field input[type=text]:focus {
     border-bottom: 1px solid #F44336;
     box-shadow: 0 1px 0 0 #F44336;
