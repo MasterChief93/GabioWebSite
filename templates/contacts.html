@@ -18,23 +18,31 @@
                 <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--12-col mdl-cell--12-col-phone">
                     <strong>Oppure puoi scriverci</strong>:<br>
                     <form action="#" method="POST" class="col s12">
+                        <div class="row">
 
                         <div class="input-field col s12">
                             <i class="material-icons prefix">account_box</i>
                             <input class="validate" type="text" id="applicant_name" name="applicant_name">
                             <label for="applicant_name">Nome e cognome</label>
                         </div>
-
                         <div class="input-field col s12">
-                            <i class="material-icons prefix">message</i>
+                            <i class="material-icons prefix">contact_mail</i>
+                            <input class="validate" type="email" id="applicant_email" name="applicant_email">
+                            <label for="applicant_email">E-mail</label>
+                        </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">message</i>
                             <textarea id="additional_info" class="materialize-textarea" name="message"
                                       length="150"></textarea>
-                            <label for="additional_info">Messaggio</label>
+                                <label for="additional_info">Messaggio</label>
+                            </div>
                         </div>
-                        <div class="col s8">
-                            <button type="submit" name="action" class="right-align waves-effect waves-light btn"
-                                    onclick="Materialize.toast('I am a toast!', 2000)">Invia Messaggio
-                            </button>
+                        <div class="row" style="padding-top: 20px">
+                            <div class="col s12 right-align">
+                                <button type="submit" name="action" class="waves-effect waves-light btn">Invia
+                                    Messaggio
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>

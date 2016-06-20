@@ -22,10 +22,11 @@ html, body {
 /*-------------------------------------------------/SEZIONE CUSTOM\---------------------------------------------------*/
 
 /*Per rimuovere le freccette negli input di type number*/
+/*TODO attenzione! Su Firefox appaiono!*/
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    -moz-appearance: none;
+    -moz-appearance: none; /*Dovrebbe nasconderli per Firefox ma non va*/
     appearance: none;
     margin: 0;
 }
@@ -50,8 +51,27 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #D32F2F !important;
 }
 
+input::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+input::-moz-placeholder {
+  opacity: 0;
+}
+.showplaceholder::-moz-placeholder,
+input:focus::-moz-placeholder {
+    opacity: 1;
+}
+
+.showplaceholder::-webkit-input-placeholder,
+input:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+
 /*Per cambiare il colore della label degli input*/
 .input-field input[type=number]:focus + label,
+.input-field input[type=email]:focus + label,
 .input-field input[type=text]:focus + label {
     color: #F44336;
 }
@@ -107,15 +127,12 @@ input[type=number]::-webkit-outer-spin-button {
     stroke-linecap: round
 }
 
-.btn-floating.btn-flat.active {
-    background-color: rgba(244, 67, 54, 0.25) !important;
-}
-
 .btn-floating.btn-flat:active {
     background-color: rgba(244, 67, 54, 0.5) !important;
 }
 
-.picker__footer .clockpicker-button:active {
+.picker__footer .clockpicker-button:active,
+.btn-floating.btn-flat.active {
     background-color: rgba(244, 67, 54, 0.25) !important;
 }
 
@@ -126,6 +143,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*Per cambiare il colore della linea al di sotto degli input */
 .input-field input[type=number]:focus,
+.input-field input[type=email]:focus,
 .input-field input[type=text]:focus {
     border-bottom: 1px solid #F44336;
     box-shadow: 0 1px 0 0 #F44336;
