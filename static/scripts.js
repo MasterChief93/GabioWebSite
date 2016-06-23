@@ -1,6 +1,6 @@
 $(function () {
     $('select').material_select();
-    
+
     $('#service_date').pickadate({
         monthsFull: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
         weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
@@ -24,7 +24,7 @@ $(function () {
             }
         }
     });
-    
+
     $('#service_hour').pickatime({
         twelvehour: false,
         donetext: '',
@@ -120,4 +120,23 @@ $(function () {
     $('#place_to').focusout(function () {
         $('#place_to').addClass('showplaceholder');
     });
+
+    //Feature da considerare:
+    //se un campo non è compilato scriverà un messaggio di errore
+    //ma si incastra con alcuni input come quelli per la ricerca degli indirizzi
+    //o per la data e l'ora
+    
+    // $('input').each(function () {
+    //     $(this).blur(function () {
+    //         if ($(this).val().length == 0) {
+    //             var x = $(this).closest('.input-field');
+    //             console.log('tutto va');
+    //             x.children('label').attr('data-error','Compila il campo');
+    //             x.children('label').addClass('active');
+    //             x.children('i').addClass('active');
+    //             $(this).addClass('invalid');
+    //             console.log('anche qui');
+    //         }
+    //     });
+    // });
 });
