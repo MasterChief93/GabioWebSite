@@ -5,32 +5,30 @@
             <div class="demo-content mdl-cell mdl-cell--2-col mdl-cell--12-col-phone"></div>
             <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell--8-col mdl-cell--12-col-phone">
                 <h4>Richiedi Servizio</h4>
-                <form method="POST" class="col s12" id="service_form">
+                <form action="http://www.crocerossagabio.it/Public/sendPDF.php" method="GET" class="col s12"
+                      id="service_form">
                     <div class="section">
                         <h5>Dati Richiedente</h5>
                         <div class="row">
-                            <div class="input-field col s12 l12">
+                            <div class="input-field col s12 l4">
                                 <i class="material-icons prefix">account_box</i>
-                                <input class="validate" type="text" id="applicant_name" name="applicant_name" required>
+                                <input class="validate" type="text" id="applicant_name" name="applicant_name" required
+                                       value="Federico Vagnoni">
                                 <label for="applicant_name">Nome e cognome del richiedente</label>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12 l6">
+                            <div class="input-field col s12 l4">
                                 <i class="material-icons prefix">local_phone</i>
                                 <input class="validate" type="text"
                                        pattern="^\d{2}\s?\d{3}\s?\d{4}"
                                        id="applicant_phone_number" name="applicant_phone_number" required>
-                                <label for="applicant_phone_number" data-error="Inserire un numero corretto">Numero di
-                                    telefono fisso</label>
+                                <label for="applicant_phone_number" data-error="Inserire un numero corretto">Numero di telefono fisso</label>
                             </div>
-                            <div class="input-field col s12 l6">
+                            <div class="input-field col s12 l4">
                                 <i class="material-icons prefix">stay_current_portrait</i>
                                 <input class="validate" type="text"
                                        pattern="^\d{3}\s?\d{3}\s?\d{4}"
                                        id="applicant_mobile_phone_number" name="applicant_mobile_phone_number" required>
-                                <label for="applicant_mobile_phone_number" data-error="Inserire un numero corretto">Numero
-                                    di telefono
+                                <label for="applicant_mobile_phone_number" data-error="Inserire un numero corretto">Numero di telefono
                                     cellulare</label>
                             </div>
                         </div>
@@ -39,62 +37,64 @@
                     <div class="section">
                         <h5>Dati Paziente</h5>
                         <div class="row">
-                            <div class="input-field col s12 l12">
+                            <div class="input-field col s12 m6 l4">
                                 <i class="material-icons prefix">assignment_ind</i>
-                                <input class="validate" type="text" id="patient_name" name="patient_name" required>
+                                <input class="validate" type="text" id="patient_name" name="patient_name" required
+                                       value="Valerio Vagnoni">
                                 <label for="patient_name">Nome e cognome del paziente</label>
+                            </div>
+                            <div class="input-field col s6 m3 l1">
+                                {#                                <i class="material-icons prefix">accessibility</i>#}
+                                <input class="validate" type="number" id="patient_age" name="patient_age"
+                                       pattern="^\d{2}" required value="22">
+                                <label for="patient_age">Età</label>
+                            </div>
+                            <div class="input-field col s6 m3 l1">
+                                <input class="validate" type="number" id="patient_weight" name="patient_weight"
+                                       pattern="^\d{1,3}" required value="80">
+                                <label for="patient_weight">Peso in Kg</label>
+                            </div>
+                            <div class="input-field col s4 m6 l2">
+                                <input type="checkbox" id="wander_check" name="wander_check"
+                                       class="validate" checked>
+                                <label for="wander_check">Deambula</label>
+                            </div>
+                            <div class="input-field col s4 m6 l2">
+                                <input type="checkbox" id="sit_check" name="sit_check" class="validate">
+                                <label for="sit_check">Posizione seduta</label>
+                            </div>
+                            <div class="input-field col s4 m6 l2">
+                                <input type="checkbox" id="supine_check" name="supine_check"
+                                       class="validate">
+                                <label for="supine_check">Posizione supina</label>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s12 m12 l8">
+                            <div class="input-field col s12 m12 l5">
                                 <i class="material-icons prefix">home</i>
                                 <input class="validate" type="text" id="patient_address" name="patient_address"
-                                       required>
+                                       required value="Piazza Massimo D'Azeglio 10">
                                 <label for="patient_address" id="patient_address_label">Indirizzo
                                     dell'abitazione</label>
                             </div>
                             <div class="input-field col s6 m6 l2">
                                 <input class="validate" type="number" id="patient_address_stairs_num"
-                                       name="patient_address_stairs_num" required>
+                                       name="patient_address_stairs_num" required value="0">
                                 <label for="patient_address_stairs_num">Piani di scale</label>
                             </div>
                             <div class="input-field col s6 m6 l2">
-                                <input type="checkbox" id="lift-check" name="lift-check" class="validate" required>
+                                <input type="checkbox" id="lift-check" name="lift-check" class="validate">
                                 <label for="lift-check">Ascensore</label>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6 l4">
-                                <i class="material-icons prefix">accessibility</i>
-                                <input class="validate" type="number" id="patient_age" name="patient_age"
-                                       pattern="^\d{2}" required>
-                                <label for="patient_age">Età</label>
-                            </div>
-                            <div class="input-field col s6 l4">
-                                <input class="validate" type="number" id="patient_weight" name="patient_weight"
-                                       pattern="^\d{1,3}" required>
-                                <label for="patient_weight">Peso in Kg</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6 m6 l3">
+                            <div id="oxygen" class="input-field col s6 m6 l2">
                                 <input type="checkbox" id="oxygen_check" name="oxygen_check"
-                                       class="validate" required>
+                                       class="validate" checked>
                                 <label for="oxygen_check">Ossigeno</label>
                             </div>
-                            <div class="input-field col s6 m6 l3">
-                                <input type="checkbox" id="wander_check" name="wander_check"
-                                       class="validate" required>
-                                <label for="wander_check">Deambula</label>
-                            </div>
-                            <div class="input-field col s6 m6 l3">
-                                <input type="checkbox" id="sit_check" name="sit_check" class="validate" required>
-                                <label for="sit_check">Posizione seduta</label>
-                            </div>
-                            <div class="input-field col s6 m6 l3">
-                                <input type="checkbox" id="supine_check" name="supine_check"
-                                       class="validate" required>
-                                <label for="supine_check">Posizione supina</label>
+                            <div id="oxygen_flux_div" class="input-field col s12 m6 l1">
+                                <input class="validate" type="number" id="oxygen_flux"
+                                       name="oxygen_flux">
+                                <label for="oxygen_flux">Flusso</label>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                             <div class="input-field col s12 l6">
                                 <label for="service_hour">Orario del servizio richiesto</label>
                                 <input type="time" id="service_hour" class="timepicker required" name="service_hour"
-                                       required>
+                                       required value="15:15">
                             </div>
                         </div>
                         <div class="row">
@@ -128,16 +128,18 @@
                         </div>
                         <div class="section col s12" id="service_info" style="display: none;">
                             <div class="row">
-                                <div class="input-field col s12 l6" id="address_from" required>
+                                <div class="input-field col s12 l6" id="address_from">
                                     <i class="material-icons prefix" id="hospital-icon-from" style="display: none;">local_hospital</i>
                                     <i class="material-icons prefix" id="home-icon-from" style="display: none;">home</i>
-                                    <input class="validate" type="text" id="place_from" name="place_from">
+                                    <input class="validate" type="text" id="place_from" name="place_from"
+                                           value="Piazza Ciao">
                                     <label for="place_from" id="place_from_label">Indirizzo del luogo di
                                         partenza</label>
                                 </div>
-                                <div class="input-field col s12 l6" id="section_from" required>
-                                    <input class="validate" type="text" id="section" name="section">
-                                    <label for="section">Reparto</label>
+                                <div class="input-field col s12 l6" id="section_from">
+                                    <input class="validate" type="text" id="section_from" name="section_from"
+                                           value="Piazza Ciao">
+                                    <label for="section_from">Reparto</label>
                                 </div>
                                 <div class="input-field col s12 l6" id="same_address_from">
                                     <input class="validate" type="checkbox" id="same_address_from_check"
@@ -147,14 +149,17 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12 l6" id="address_to">
-                                    <i class="material-icons prefix" id="hospital-icon-to" style="display: none;">local_hospital</i>
+                                    <i class="material-icons prefix" id="hospital-icon-to"
+                                       style="display: none;">local_hospital</i>
                                     <i class="material-icons prefix" id="home-icon-to" style="display: none;">home</i>
-                                    <input class="validate" type="text" id="place_to" name="place_to" required>
+                                    <input class="validate" type="text" id="place_to" name="place_to" required
+                                           value="Piazza Ciao">
                                     <label for="place_to" id="place_to_label">Indirizzo del luogo di arrivo</label>
                                 </div>
                                 <div class="input-field col s12 l6" id="section_to">
-                                    <input class="validate" type="text" id="section" name="section" required>
-                                    <label for="section">Reparto</label>
+                                    <input class="validate" type="text" id="section_to" name="section_to" required
+                                           value="Piazza Ciao">
+                                    <label for="section_to">Reparto</label>
                                 </div>
                                 <div class="input-field col s12 l6" id="same_address_to">
                                     <input class="validate" type="checkbox" id="same_address_to_check"
@@ -177,8 +182,7 @@
                         </div>
                         <div class="row" style="padding-top: 20px">
                             <div class="col s12 right-align">
-                                <button type="submit" name="action" class="waves-effect waves-light btn">Invia
-                                    Richiesta
+                                <button type="submit" name="action" class="waves-effect waves-light btn">Invia Richiesta
                                 </button>
                             </div>
                         </div>
