@@ -20,10 +20,13 @@ def index():
     return render_template('article.html', page=page)
 
 
-@app.route('/<path:path>/')
-def page(path):
-    page = pages.get_or_404(path)
-    return render_template('article.html', page=page)
+@app.route('/sostienici/')
+def sostienici():
+    return render_template('sostienici.html')
+
+@app.route('/chi-siamo/')
+def chi_siamo():
+    return render_template('chi-siamo.html')
 
 
 @app.route('/richiedi-servizio/')
@@ -34,6 +37,10 @@ def richiedi_servizio():
 @app.route('/contattaci/')
 def contattaci():
     return render_template("contacts.html")
+
+@app.route('/unisciti/')
+def unisciti():
+    return render_template("unisciti.html")
 
 
 @freezer.register_generator

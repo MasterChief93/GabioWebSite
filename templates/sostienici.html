@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main class="demo-main mdl-layout__content">
+        <div class="demo-container mdl-grid">
+            {% include "side-bar.html" %}
+            <div class="mdl-cell--8-col mdl-cell--12-col-phone">
+                <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell--12-col mdl-cell--12-col-phone">
+                    Se vuoi sostenterci dona una somma a tua scelta attraverso PayPal o tramite C/C o Bonifico
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="86C9SJUR37JBC">
+                        <input type="image"
+                               src="http://www.monetizzando.com/wp-content/uploads/guadagnare-con-donazione-paypal.jpg"
+                               border="0" class="responsive-img" name="submit" style="width: 100%;"
+                               alt="PayPal è il metodo rapido e sicuro per pagare e farsi pagare online.">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1"
+                             height="1">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}
