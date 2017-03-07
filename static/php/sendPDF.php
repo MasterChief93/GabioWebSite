@@ -49,11 +49,11 @@ $pdf->Merge();
 $pdf_file = $pdf->Output('richiesta.pdf', 'S');
 
 $mail = new PHPMailer();
-$mail->setFrom('no-reply@gabiowebsite.com', 'Comitato locale Gabio');
-$mail->addAddress('fede93.vagnoni@gmail.com', 'Federico Vagnoni');
+$mail->setFrom('no-reply@gabiowebsite.com', 'Richiesta servizio sito');
+$mail->addAddress('cl.gabio@cri.it', 'Comitato Gabio');
 //$mail->addAddress('pastorini.claudio@gmail.com', 'Claudio Pastorini');
 $mail->Subject  = 'Richiesta servizio';
-$mail->Body     = 'Ciao!!';
+$mail->Body     = 'Nuovo servizio richiesto';
 $mail->addStringAttachment($pdf_file, 'richiesta.pdf');
 if(!$mail->send()) {
   echo 'Message was not sent.';

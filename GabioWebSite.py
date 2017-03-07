@@ -43,14 +43,14 @@ def unisciti():
     return render_template("unisciti.html")
 
 
-@freezer.register_generator
-def page():
-    for page in pages._pages:
-        yield {'path': page}
+# @freezer.register_generator
+# def page_links():
+#     for page in pages._pages:
+#         yield {'path': page}
 
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
     else:
-        app.run(port=8080)
+        app.run(host="0.0.0.0", port=8080)
